@@ -1,6 +1,7 @@
 #include "link_list.hpp"
+#include <memory>
 int main() {
-  Linklist *list = new Linklist(400);
+  std::unique_ptr<Linklist> list(new Linklist(400));
   list->push_back(20);
   list->push_back(45);
   list->push_back(56);
@@ -13,5 +14,4 @@ int main() {
   list->print();
   std::cout << "length is (" << list->length() << ")";
   std::cout << "\n";
-  delete list;
 }
